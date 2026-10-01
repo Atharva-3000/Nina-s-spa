@@ -137,8 +137,12 @@ export default function Home() {
           </nav>
 
           {/* Mobile Dropdown Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden bg-black/80 backdrop-blur-md border-t border-white/10 px-4 py-4 flex flex-col gap-2">
+          <div 
+            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+              mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <div className="bg-black/90 backdrop-blur-xl border-t border-white/10 px-4 py-5 flex flex-col gap-2 shadow-2xl">
               {navLinks.map(({ href, label, id }) => (
                 <Link
                   key={id}
@@ -155,7 +159,7 @@ export default function Home() {
                 or call: <span className="text-white font-bold">+91-8054698623</span>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
 

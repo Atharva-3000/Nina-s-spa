@@ -94,9 +94,9 @@ export default function Contact() {
             <div className="flex md:hidden items-center gap-2">
               <Link
                 href="/contact"
-                className="bg-brand-red text-white px-4 py-2 rounded-full font-semibold text-[12px] shadow-md whitespace-nowrap"
+                className="bg-brand-red text-white px-5 py-2.5 rounded-full font-bold text-[13px] tracking-wide shadow-[0_4px_15px_rgba(250,93,93,0.5)] whitespace-nowrap hover:scale-105 active:scale-95 transition-all"
               >
-                Book
+                Book Now
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -109,8 +109,12 @@ export default function Contact() {
           </nav>
 
           {/* Mobile Dropdown Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden bg-black/80 backdrop-blur-md border-t border-white/10 px-4 py-4 flex flex-col gap-2">
+          <div 
+            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+              mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <div className="bg-black/90 backdrop-blur-xl border-t border-white/10 px-4 py-5 flex flex-col gap-2 shadow-2xl">
               {navLinks.map(({ href, label, id }) => (
                 <Link
                   key={id}
@@ -127,7 +131,7 @@ export default function Contact() {
                 or call: <span className="text-white font-bold">+91-8054698623</span>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
 
