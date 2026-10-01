@@ -173,10 +173,11 @@ export default function Home() {
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/55 via-transparent to-black/65" />
 
         {/* First Screen (100svh) */}
-        <div className="relative w-full min-h-[100svh] flex flex-col items-center justify-end z-10 pb-6 md:pb-8">
+        <div className="relative w-full min-h-[100svh] flex flex-col items-center justify-between z-10 pb-6 md:pb-8 pt-[90px] md:pt-[110px]">
+          
           {/* Hero Content */}
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-5 gap-5 md:gap-6 pt-16 pb-[40%] md:pb-[18%]">
-            <h1 className="font-serif text-[40px] sm:text-[50px] md:text-[64px] text-white font-bold leading-[1.05] tracking-tight drop-shadow-sm">
+          <div className="flex-1 w-full flex flex-col items-center justify-center text-center px-5 gap-5 md:gap-6 py-8">
+            <h1 className="font-serif text-[40px] sm:text-[50px] md:text-[64px] text-white font-bold leading-[1.05] tracking-tight drop-shadow-sm mt-4 md:mt-0">
               A Little Time,<br />Just For You.
             </h1>
             <p className="text-white/90 text-[14px] md:text-[15px] font-medium max-w-[400px] md:max-w-[460px] leading-relaxed drop-shadow-md">
@@ -213,27 +214,30 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 3 Glass Info Cards */}
-          <div className="relative z-10 w-full max-w-[1000px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-5 px-4 mb-5 md:mb-6">
-            {[
-              { label: "Japanese Techniques", value: "50+ Trained Staff" },
-              { label: "Membership Model", value: "Save More" },
-              { label: "Male And Female Staff", value: "100% Comfort" },
-            ].map(({ label, value }) => (
-              <div
-                key={label}
-                className="bg-[#FA5D5D]/25 backdrop-blur-md text-white border border-[#FA5D5D]/40 py-4 md:py-5 px-4 md:px-5 rounded-[16px] md:rounded-[20px] text-center"
-              >
-                <p className="font-serif text-[14px] md:text-[15px] mb-1 opacity-90 tracking-wide">{label}</p>
-                <h3 className="text-[18px] md:text-[22px] font-bold tracking-wide">{value}</h3>
-              </div>
-            ))}
-          </div>
+          {/* Bottom Area (Cards & Scroll indicator) */}
+          <div className="w-full flex flex-col items-center">
+            {/* 3 Glass Info Cards */}
+            <div className="w-full max-w-[1000px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-5 px-4 mb-5 md:mb-6">
+              {[
+                { label: "Japanese Techniques", value: "50+ Trained Staff" },
+                { label: "Membership Model", value: "Save More" },
+                { label: "Male And Female Staff", value: "100% Comfort" },
+              ].map(({ label, value }) => (
+                <div
+                  key={label}
+                  className="bg-[#FA5D5D]/25 backdrop-blur-md text-white border border-[#FA5D5D]/40 py-4 md:py-5 px-4 md:px-5 rounded-[16px] md:rounded-[20px] text-center"
+                >
+                  <p className="font-serif text-[14px] md:text-[15px] mb-1 opacity-90 tracking-wide">{label}</p>
+                  <h3 className="text-[18px] md:text-[22px] font-bold tracking-wide">{value}</h3>
+                </div>
+              ))}
+            </div>
 
-          {/* Scroll indicator */}
-          <div className="relative z-10 flex flex-col items-center text-white/70 text-[10px] md:text-[11px] font-medium tracking-wide gap-1 mb-2">
-            <span>scroll to know more</span>
-            <span className="animate-bounce text-[12px]">↓</span>
+            {/* Scroll indicator */}
+            <div className="flex flex-col items-center text-white/70 text-[10px] md:text-[11px] font-medium tracking-wide gap-1 mb-2">
+              <span>scroll to know more</span>
+              <span className="animate-bounce text-[12px]">↓</span>
+            </div>
           </div>
         </div>
         
